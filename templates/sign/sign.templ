@@ -1,0 +1,53 @@
+package sign
+
+import (
+	"rank-and-roll/templates"
+)
+
+templ Sign() {
+	@templates.Header("Rank and Roll")
+	<script>
+		function spotifyOAuth() {
+			await fetch('/spotify-oauth')
+		}
+	</script>
+	<body>
+		<main class="w-screen h-screen flex justify-center items-center">
+			<div class="w-96 flex flex-col b-2 border-black items-center">
+				<h1 class="font-bold">Rank & Roll</h1>
+				<form method="POST" action="/spotify-oauth">
+					<button type="submit" class="border-green-400 border-2 p-4 flex items-center gap-2">
+						<img src="/static/assets/spotify_logo.png" alt="" class="h-4"/> 
+						Start With Spotify
+					</button>
+				</form>				
+			</div>
+		</main>    
+	</body>	
+}
+
+templ Login() {
+	<form method="POST" action="/login" method="post" class="flex flex-col items-center" id="auth-form">
+		<input type="text" name="email" placeholder="Email"/>
+		<input type="password" name="password" placeholder="Password"/>
+		<button type="submit">Login</button>
+		<a 
+			hx-get="/set-sign-up" 
+			hx-target="#auth-form" 
+			hx-swap="outerHTML"
+		>Signing Up?</a>
+	</form>
+}
+
+templ SignUp() {
+	<form method="POST" action="/sign-up" method="post" class="flex flex-col items-center" id="auth-form">
+		<input type="text" name="email" placeholder="Email"/>
+		<input type="password" name="password" placeholder="Password"/>
+		<button type="submit">Sign Up</button>
+		<a 
+			hx-get="/set-login" 
+			hx-target="#auth-form" 
+			hx-swap="outerHTML"
+		>Login?</a>
+	</form>
+}

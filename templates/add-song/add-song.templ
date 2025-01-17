@@ -1,0 +1,21 @@
+package addsong
+
+import "rank-and-roll/templates"
+
+templ AddSong() {
+	@templates.Header("Add and Roll")
+	<body>
+		@templates.Navbar()	
+		<main class="w-screen flex flex-col items-center">
+			<form method="POST" action="/add-song">
+				<label for="streaming-service">Which Music Streaming platform's ID</label>
+				<select name="streaming-service" id="song-dropbox" style="display: block;">
+					<option value="" selected>Choose Service</option>
+					<option value="spotify">Spotify</option>
+				</select>
+				<input type="text" name="song-id" placeholder="Spotify Song Id"/>
+				<button type="submit" >Add Song</button>
+			</form>
+		</main>    
+	</body>
+}

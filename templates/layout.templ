@@ -1,0 +1,19 @@
+package templates
+
+templ Header(title string) {
+	<head>
+		<title>{ title }</title>
+		<link rel="stylesheet" href="static/css/output.css" />
+		<script src="static/htmx/htmx.min.js"></script>
+		<link rel="icon" type="image/svg+xml" href="static/favicon.svg" />
+		<style>
+			body {
+				background: rgb(16,4,0);
+				background: linear-gradient(106deg, rgba(16,4,0,1) 0%, rgba(121,13,9,1) 37%, rgba(230,127,39,1) 76%);
+				min-height: 100dvh;
+				color: white;
+			}
+		</style>
+	</head>
+}
+
