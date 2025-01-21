@@ -8,8 +8,8 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"rank-and-roll/models"
-	"rank-and-roll/util"
+	"music-exchange/models"
+	"music-exchange/util"
 
 	"github.com/gin-gonic/gin"
 )
@@ -53,7 +53,7 @@ func (oAuthHandler *OAuthHandlers) SpotifyCallback(ctx *gin.Context) {
 	}
 
 	token_str, err := util.CreateToken(profile_response.Email, profile_response.Service)
-	ctx.SetCookie("rank-and-roll-token", token_str, 3600, "/", "localhost", false, true)
+	ctx.SetCookie("music-exchange-token", token_str, 3600, "/", "localhost", false, true)
 	ctx.Redirect(http.StatusPermanentRedirect, "/dashboard")
 }
 

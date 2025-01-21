@@ -3,7 +3,7 @@ package db
 import (
 	"context"
 	"fmt"
-	"rank-and-roll/models"
+	"music-exchange/models"
 
 	"github.com/jackc/pgx/v5"
 )

@@ -3,13 +3,13 @@ package middleware
 import (
 	"fmt"
 	"net/http"
-	"rank-and-roll/util"
+	"music-exchange/util"
 
 	"github.com/gin-gonic/gin"
 )
 
 func JWTAuthMiddleware(ctx *gin.Context) {
-	token_str, err := ctx.Cookie("rank-and-roll-token")
+	token_str, err := ctx.Cookie("music-exchange-token")
 
 	if err != nil {
 		ctx.Redirect(http.StatusSeeOther, "/sign")

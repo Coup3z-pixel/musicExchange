@@ -2,7 +2,7 @@ package db
 
 import (
 	"context"
-	"rank-and-roll/models"
+	"music-exchange/models"
 
 	"github.com/jackc/pgx/v5"
 )

@@ -1,6 +1,6 @@
 package auth
 
-import "rank-and-roll/db"
+import "music-exchange/db"
 
 type OAuthHandlers struct {
 	DB *db.UserDB

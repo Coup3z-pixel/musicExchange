@@ -1,8 +1,8 @@
 package templates
 
 import (
-	addsong "rank-and-roll/templates/add-song"
-	"rank-and-roll/util"
+	addsong "music-exchange/templates/add-song"
+	"music-exchange/util"
 
 	"github.com/gin-gonic/gin"
 )

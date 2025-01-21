@@ -5,14 +5,13 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"rank-and-roll/db"
-	"rank-and-roll/handlers/auth"
-	"rank-and-roll/handlers/crud"
-	load "rank-and-roll/handlers/templates"
-	"rank-and-roll/middleware"
-	"rank-and-roll/templates"
-	"rank-and-roll/templates/sign"
-	"rank-and-roll/util"
+	"music-exchange/db"
+	"music-exchange/handlers/auth"
+	load "music-exchange/handlers/templates"
+	"music-exchange/middleware"
+	"music-exchange/templates"
+	"music-exchange/templates/sign"
+	"music-exchange/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -56,9 +55,6 @@ func main() {
 	r.GET("/dashboard", load.Dashboard)
 	r.GET("/leaderboard", middleware.JWTAuthMiddleware, load.Leaderboard)
 	r.GET("/stats", middleware.JWTAuthMiddleware, load.Stats)
-
-	r.GET("/add-song", load.AddSong)
-	r.POST("/add-song", crud.AddSongById)
 
 	r.GET("/sign", func(ctx *gin.Context) { util.Render(ctx, 200, sign.Sign() ) })
 

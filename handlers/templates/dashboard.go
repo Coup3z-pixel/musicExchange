@@ -3,17 +3,17 @@ package templates
 import (
 	"fmt"
 	"net/http"
-	"rank-and-roll/templates"
-	"rank-and-roll/templates/dashboard"
-	"rank-and-roll/templates/leaderboard"
-	"rank-and-roll/templates/stats"
-	"rank-and-roll/util"
+	"music-exchange/templates"
+	"music-exchange/templates/dashboard"
+	"music-exchange/templates/leaderboard"
+	"music-exchange/templates/stats"
+	"music-exchange/util"
 
 	"github.com/gin-gonic/gin"
 )
 
 func Dashboard(ctx *gin.Context) {
-	token_str, err := ctx.Cookie("rank-and-roll-token")
+	token_str, err := ctx.Cookie("music-exchange-token")
 
 	if err != nil {
 		ctx.Redirect(http.StatusSeeOther, "/sign")
